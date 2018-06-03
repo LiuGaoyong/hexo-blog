@@ -16,4 +16,9 @@ categories:
 
 ---
 
+> 从[上一节](https://liugaoyong.github.io/gaussian-0/)的 water 的例子我们计算了水分子，具体输入文件：
+
+
+
+再谈今天的主题之前，需要大致了解 Gaussian 计算任务的类型
 
