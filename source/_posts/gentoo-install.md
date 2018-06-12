@@ -86,7 +86,7 @@ tar xvf stage3*
 
 ### 编译配置选项
 > 为了保留设置，Portage读入/etc/portage/make.conf文件 ，一个用于Portage的配置文件。`vi /mnt/gentoo/etc/portage/make.conf`
-
+![](http://p7b7this6.bkt.clouddn.com/18-6-12/29231760.jpg)
 
 ## 安装Gentoo基本系统
 ### 配置Chroot
@@ -186,15 +186,49 @@ make install
 ## 配置新系统
 ### 硬盘分区开机自动挂载
 ![](http://p7b7this6.bkt.clouddn.com/18-6-2/34674673.jpg)
-###
+### 配置root密码
+`passwd root`
 
 ## 安装系统工具
+### VIM
+`emerge --ask vim`
+### 无线网络驱动
+`emerge sys-kernel/linux-firmware`
+### 安装wpa_supplicant
+`emerge wpa_supplicant`
+### 安装DHCP客户端
+`emerge dhcpcd`
+### 安装PPPoE客户端
+`emerge --ask net-dialup/ppp`
+### 日志工具
+```bash
+emerge syslog-ng
+rc-update add syslog-ng default
+```
+### Cron守护进程
+```bash
+emerge --ask sys-process/cronie
+rc-update add cronie default
+crontab /etc/crontab
+```
+
+
+
+
 
 
 ## 配置BootLoader
+```bash
+echo 'GRUB_PLATFORMS="efi-64"' >> /etc/portage/make.conf
+emerge --ask sys-boot/grub:2
 
+grub-install --target=x86_64-efi --efi-directory=/boot
 
-## 收尾
+grub-mkconfig -o /boot/grub/grub.cfg
+
+reboot
+```
+
 
 
 
