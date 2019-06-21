@@ -102,7 +102,7 @@ deploy:
   repository: 
     #github: git@github.com:LiuGaoyong/liugaoyong.github.io.git
     github: https://github.com/LiuGaoyong/liugaoyong.github.io.git
-    aliyun: git@liugaoyong.top:/home/git/blog.git
+    #aliyun: git@liugaoyong.top:/home/git/blog.git
   branch: master
 
 
